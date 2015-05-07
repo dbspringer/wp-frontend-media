@@ -1,10 +1,13 @@
 (function($) {
 
 $(document).ready( function() {
-	var file_frame;
+	var file_frame; // variable for the wp.media file_frame
+
+	// attach a click event (or whatever you want) to some element on your page
 	$( '#frontend-button' ).on( 'click', function( event ) {
 		event.preventDefault();
 
+		// if the file_frame has already been created, just reuse it
 		if ( file_frame ) {
 			file_frame.open();
 			return;

@@ -30,6 +30,9 @@ class Front_End_Media {
 		add_action( 'init', array( $this, 'init' ) );
 	}
 
+	/**
+	 * Init the textdomain and all the the hooks/filters/etc
+	 */
 	function init() {
 		load_plugin_textdomain(
 			'frontend-media',
@@ -47,7 +50,7 @@ class Front_End_Media {
 	function enqueue_scripts() {
 		wp_enqueue_media();
 		wp_enqueue_script(
-			'some-script',
+			'frontend-js',
 			plugins_url( '/', __FILE__ ) . 'js/frontend.js',
 			array( 'jquery' ),
 			'2015-05-07'
